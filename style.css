@@ -8,6 +8,7 @@
 html {
   font-size: 62.5%;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -56,6 +57,9 @@ button:hover {
 .main-head {
   background-color: #131c27;
   color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
 }
 nav {
   min-height: 10vh;
@@ -63,7 +67,6 @@ nav {
   width: 90%;
   margin: auto;
   padding: 2rem;
-  min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -76,7 +79,7 @@ nav ul {
   list-style: none;
 }
 #logo {
-  flex: 1 1 40rem;
+  flex: 2 1 40rem;
   font-family: "Fredoka One", cursive;
   font-weight: 400;
 }
@@ -85,6 +88,7 @@ nav ul {
   min-height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
     url("./images/1781.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
@@ -108,6 +112,7 @@ nav ul {
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 .locations-head {
   width: 90%;
@@ -123,41 +128,72 @@ nav ul {
 }
 
 
-.ship {
+.asteroid {
   position: absolute;
-  top: 20%;
-  right: 40%;
+  top: 2%;
+  right: 50%;
   transform: rotate(180deg);
-  width: 85px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
 }
-.moving-ship-1 {
+.moving-asteroid {
   font-size: 15px;
-  animation: shipAnimation 3s infinite alternate ease-in-out;
+  animation: asteroidAnimation 7s linear infinite;
 }
 
-/* @-webkit-keyframes shipAnimation {
+.ship2 {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  width: 55px;
+  height: 60px;
+}
+.moving-ship-2 {
+  font-size: 15px;
+  animation: shipAnimation2 4s infinite alternate ease-in-out;
+}
+
+.ship3 {
+  position: absolute;
+  top: 73%;
+  right: 47%;
+  width: 45px;
+  height: 50px;
+}
+.moving-ship-3 {
+  font-size: 15px;
+  animation: shipAnimation3 4s linear infinite;
+}
+
+
+
+/* Ship Animation */
+
+@keyframes asteroidAnimation {
+  100% {
+    transform: translate(500px, 400px);
+  }
+}
+
+@-webkit-keyframes shipAnimation2 {
   from{
       -webkit-transform: rotate(0deg);
   }
   to{
       -webkit-transform: rotate(360deg);
   }
-} */
+}
 
-@keyframes shipAnimation {
-  /* from {
-    transform: translate(10%, -10%);
+@keyframes shipAnimation3 {
+  from {
+    transform: rotate(360deg) translate(100px);
   }
   to {
-    transform: translate(0%, 0%);
-  } */
-  100% {
-    transform: translate(300px, 300px);
-}
+    transform: rotate(0deg) translate(100px);
+  }
 }
 
-/* Benefits section 6-29*/
+/* Benefits section */
 
 .benefits-head {
   background: #455d8a;
@@ -170,7 +206,6 @@ nav ul {
   color: rgb(248, 246, 246);
   text-align: center;
 }
-
 .benefits-head h3 {
   padding: 1rem;
 }
@@ -208,7 +243,7 @@ nav ul {
 #contact {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-   url(./images/47688.jpg);
+   url(./images/1859.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -217,12 +252,11 @@ nav ul {
 }
 
 .form-wrapper {
-  background: rgba(19, 28, 39, 0.9);
+  background: #131c27;
   width: 60%;
   color: white;
   border-radius: 20px;
 }
-
 .form-head {
   text-align: center;
   padding: 4rem;
@@ -250,7 +284,7 @@ nav ul {
 
 footer {
   color: white;
-  background: rgba(19, 28, 39, 1);
+  background: rgb(18, 21, 26);
 }
 .footer-wrapper {
   display: flex;
@@ -279,6 +313,7 @@ footer ul {
   filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
+/* Media Query */
 
 @media screen and (max-width: 932px) {
   html {
