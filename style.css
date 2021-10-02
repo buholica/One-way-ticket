@@ -7,6 +7,8 @@
 }
 html {
   font-size: 62.5%;
+  scroll-padding-top: 10vh;
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -155,7 +157,7 @@ nav ul {
 
 .ship3 {
   position: absolute;
-  top: 73%;
+  top: 74%;
   right: 47%;
   width: 45px;
   height: 50px;
@@ -186,10 +188,10 @@ nav ul {
 
 @keyframes shipAnimation3 {
   from {
-    transform: rotate(360deg) translate(100px);
+    transform: rotate(360deg) translate(115px);
   }
   to {
-    transform: rotate(0deg) translate(100px);
+    transform: rotate(0deg) translate(115px);
   }
 }
 
@@ -221,11 +223,11 @@ nav ul {
 .card {
   background: rgb(104, 56, 136);
   text-align: center;
-  flex: 1 1 25rem;
-  min-height: 40vh;
+  min-height: 30vh;
   margin: 2rem 5rem;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
   border-radius: 3rem;
+  color: white;
 }
 
 .cards img {
@@ -236,6 +238,10 @@ nav ul {
 .card h4,
 .card p {
   padding: 3rem;
+}
+
+#death {
+  opacity: 0.6;
 }
 
 /* Contact Section */
@@ -325,15 +331,46 @@ footer ul {
   #logo {
     padding: 1rem;
   }
-  .ship {
-    height: 40rem;
-  }
-  .moving-ship-1 {
-    z-index: -2;
-  }
   .locations-head h3 {
     background: rgba(19, 28, 39, 0.9);
     -webkit-text-fill-color: white;
+    position: relative;
+    z-index: 2;
+  }
+  .ship {
+    height: 40rem;
+  }
+  .moving-ship-3 {
+    z-index: 1;
+  }
+  .ship3 {
+    right: 39%;
+  }
+  @keyframes shipAnimation3 {
+    from {
+      transform: rotate(360deg) translate(80px);
+    }
+    to {
+      transform: rotate(0deg) translate(80px);
+    }
+  }
+  .cards {
+    display: inline-table;
+  }
+  .card {
+    width: 90%;
+    height: 20%;
+    padding: 1rem;
+    margin: 2.5rem;
+    flex-flow: column wrap;
+    color: white;
+  }
+  .cards h4 {
+    padding: 1rem;
+  }
+  .cards p {
+    padding: 1rem;
+    margin: 1rem;
   }
   .form-wrapper {
     width: 100%;
